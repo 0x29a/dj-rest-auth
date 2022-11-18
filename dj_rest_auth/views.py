@@ -125,6 +125,7 @@ class LoginView(GenericAPIView):
         return response
 
     def post(self, request, *args, **kwargs):
+        import ipdb; ipdb.set_trace()
         self.request = request
         self.serializer = self.get_serializer(data=self.request.data)
         self.serializer.is_valid(raise_exception=True)

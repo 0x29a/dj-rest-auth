@@ -146,6 +146,7 @@ class SocialLoginSerializer(serializers.Serializer):
         social_token = adapter.parse_token(tokens_to_parse)
         social_token.app = app
 
+        import ipdb; ipdb.set_trace()
         try:
             login = self.get_social_login(adapter, app, social_token, token)
             ret = complete_social_login(request, login)
